@@ -1,10 +1,14 @@
 package com.nik.db.serviсe;
 
 import com.nik.db.dto.UsersDTO;
+import com.nik.db.exception.ValidationException;
+
 import java.util.List;
 
-public interface UsersServise {
-    UsersDTO saveUser(UsersDTO usersDTO);
+
+public interface UsersService {
+
+    UsersDTO saveUser(UsersDTO usersDTO) throws ValidationException;
 
     void deleteUser(Integer userId);
 

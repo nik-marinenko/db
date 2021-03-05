@@ -5,7 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 
 @Data
-public class DTO {
+@Builder
+public class UsersDTO {
     private Integer id;
     private String name;
     private String login;
