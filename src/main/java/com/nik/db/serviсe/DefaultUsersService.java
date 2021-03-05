@@ -27,17 +27,6 @@ public class DefaultUsersService implements UsersService{
         if(isNull(usersDto.getLogin())||usersDto.getLogin().isEmpty()){
             throw new ValidationException("Login is empty");
         }
-
-    }
-
-
-    public Users fromUserDtoToUser(UsersDTO usersDTO){
-        Users users = new Users();
-        users.setId(usersDTO.getId());
-        users.setEmail(usersDTO.getEmail());
-        users.setName(usersDTO.getName());
-        users.setLogin(usersDTO.getLogin());
-        return users;
     }
 
     @Override

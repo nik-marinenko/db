@@ -10,9 +10,9 @@ public class UsersConverter {
     public UsersDTO fromUserToUserDto(Users users){
         return UsersDTO.builder()
                 .id(users.getId())
-                .email(users.getEmail())
-                .login(users.getLogin())
                 .name(users.getName())
+                .login(users.getLogin())
+                .email(users.getEmail())
                 .build();
     }
 
