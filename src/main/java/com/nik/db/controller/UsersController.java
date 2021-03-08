@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
-
 import java.util.List;
 
 
@@ -15,7 +14,6 @@ import java.util.List;
 @RequestMapping("/users")
 @AllArgsConstructor
 @Log
-@CrossOrigin
 public class UsersController {
 
     private final UsersService usersService;
