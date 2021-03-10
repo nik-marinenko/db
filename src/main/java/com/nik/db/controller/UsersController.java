@@ -39,6 +39,7 @@ public class UsersController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteUsers(@PathVariable Integer id){
         log.info("Handling delete user request: " + id);
+        usersService.deleteUser(id);
         return ResponseEntity.ok().build();
     }
 }

@@ -20,10 +20,10 @@ public class UsersConverter {
 
     public Users fromUserDtoToUser(UsersDTO usersDTO){
         Users users = new Users();
-        users.setId(users.getId());
-        users.setEmail(users.getEmail());
-        users.setLogin(users.getLogin());
-        users.setName(users.getName());
+        users.setId(usersDTO.getId());
+        users.setEmail(usersDTO.getEmail());
+        users.setLogin(usersDTO.getLogin());
+        users.setName(usersDTO.getName());
         log.info("converter to user" + users);
         return users;
     }
