@@ -5,6 +5,7 @@ import com.nik.db.entity.Users;
 import com.nik.db.exception.ValidationException;
 import com.nik.db.repository.UsersRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import static java.util.Objects.isNull;
 
 @Service
 @AllArgsConstructor
+@Log
 public class DefaultUsersService implements UsersService{
 
     private final UsersRepository usersRepository;
@@ -33,6 +35,7 @@ public class DefaultUsersService implements UsersService{
     public  UsersDTO saveUser(UsersDTO usersDTO) throws ValidationException{
         validateUserDto(usersDTO); //валидация входящих данных
         Users savedUser = usersRepository.save(usersConverter.fromUserDtoToUser(usersDTO)); //конвертация в юзера и сохранение в бд
+        log.info("savedUser" + savedUser);
         return usersConverter.fromUserToUserDto(savedUser); //конвертация сохраненного юзера в дто
     }
 
